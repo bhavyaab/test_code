@@ -60,11 +60,13 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   }
 
   for( var j = 0; j < arr.length; j++){
-    y = multiply(arr[i], y)[0];
+    y = multiply(arr[j], y)[0];
+    console.log(y);
   }
   var ans1 = a + ' and ' + b + ' and ' + c + ' sum to ' + x + '.' ;
   var ans2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + y + '.';
-  return [x, y, ans1, ans2];
+  console.log([x, ans1, ans2, y]);
+  return [x, ans1, ans2, y];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -90,8 +92,8 @@ function sumArray(testArray){ //eslint-disable-line
   for( var i = 0; i < testArray.length; i++){
     x = sum(testArray[i], x)[0];
   }
-  var str = testArray[0] + ', ' + testArray[1] + ', ' + testArray[2] + ' was passed in as an array of numbers, and ' + x + ' is their sum.';
-
+  var str = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + x + ' is their sum.';
+  console.log([x, str]);
   return [x, str];
 };
 
@@ -115,9 +117,10 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(testArray){ //eslint-disable-line
   var y = 1;
   for( var j = 0; j < testArray.length; j++){
-    y = multiply(testArray[j], 1)[0];
+    y = multiply(testArray[j], y)[0];
   }
-  var str = 'The number ' + testArray[0] + ', ' + testArray[1] + ', ' + testArray[2] + ' have a product of ' + y;
+  var str = 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + y + '.';
+  console.log([y, str]);
   return [y, str];
 }
 
